@@ -7,6 +7,5 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
     <artifactId>order-domain-core</artifactId>
-    <name>Archetype - order-domain-core</name>
-    <url>http://maven.apache.org</url>
+    <name>order-domain-core</name>
 </project>
