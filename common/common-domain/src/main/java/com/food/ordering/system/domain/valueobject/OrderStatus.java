@@ -1,5 +1,5 @@
 package com.food.ordering.system.domain.valueobject;
 
 public enum OrderStatus {
-    PENDING, PAID, APPROVED, CANCELLING, CANCELLED0
+    PENDING, PAID, APPROVED, CANCELLING, CANCELLED
 }
