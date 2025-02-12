@@ -6,10 +6,12 @@ import com.food.ordering.system.domain.valueobject.Money;
 import com.food.ordering.system.domain.valueobject.OrderId;
 import com.food.ordering.system.domain.valueobject.OrderStatus;
 import com.food.ordering.system.domain.valueobject.RestaurantId;
+import com.food.ordering.system.order.service.domain.valueobject.OrderItemId;
 import com.food.ordering.system.order.service.domain.valueobject.StreetAddress;
 import com.food.ordering.system.order.service.domain.valueobject.TrackingId;
 
 import java.util.List;
+import java.util.UUID;
 
 public class Order extends AggregateRoot<OrderId> {
     private final CustomerId customerId;
@@ -134,4 +136,21 @@ public class Order extends AggregateRoot<OrderId> {
             return new Order(this);
         }
     }
+
+
+    public void initializeOrder() {
+        setId(new OrderId(UUID.randomUUID()));
+        trackingId = new TrackingId(UUID.randomUUID());
+        orderStatus = OrderStatus.PENDING;
+        initializeOrderItems();
+    }
+
+    private void initializeOrderItems() {
+        long itemId = 1;
+        for (OrderItem orderItem : items) {
+            orderItem.initializeOrderItem(super.getId(), new OrderItemId(itemId++));
+        }
+    }
+
+
 }
