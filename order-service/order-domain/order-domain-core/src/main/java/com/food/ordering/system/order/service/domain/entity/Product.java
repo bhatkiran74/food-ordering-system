@@ -14,11 +14,11 @@ public class Product extends BaseEntity<ProductId> {
         this.price = price;
     }
 
-    public Money getPrice() {
-        return price;
-    }
-
     public String getName() {
         return name;
+    }
+
+    public Money getPrice() {
+        return price;
     }
 }
