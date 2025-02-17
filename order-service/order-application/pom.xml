@@ -7,6 +7,12 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
     <artifactId>order-application</artifactId>
-    <name>Archetype - order-application</name>
-    <url>http://maven.apache.org</url>
+    <name>order-application</name>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.food.ordering.system</groupId>
+            <artifactId>order-application-service</artifactId>
+        </dependency>
+    </dependencies>
 </project>
