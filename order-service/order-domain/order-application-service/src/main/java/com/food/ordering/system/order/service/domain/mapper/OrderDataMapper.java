@@ -67,10 +67,11 @@ public class OrderDataMapper {
                 .failureMessage(order.getFailureMessage())
                 .build();
     }
-    public CreateOrderResponse orderToCreateOrderResponse(Order savedResult) {
+    public CreateOrderResponse orderToCreateOrderResponse(Order savedResult,String message) {
         return  CreateOrderResponse.builder()
                 .orderTrackingId(savedResult.getTrackingId().getValue())
                 .orderStatus(savedResult.getOrderStatus())
+                .message(message)
                 .build();
     }
 }
